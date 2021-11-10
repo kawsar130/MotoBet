@@ -41,7 +41,7 @@ const OverView = () => {
                             durability and PERFORMANCE!
                         </Typography>
                     </Box>
-                    <Grid container sx={{ py: 5, gap: 5 }}>
+                    <Grid container sx={{ mt: 4, gap: 3 }}>
                         <Grid style={{ display: "flex" }}>
                             <Grid>
                                 <img src={overview1} alt="" />
@@ -51,7 +51,7 @@ const OverView = () => {
                                     Cutting Edge Tech
                                 </Typography>
                                 <Typography>
-                                    We ensure the latest technology
+                                    We ensure the latest and greatest technology
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -61,10 +61,11 @@ const OverView = () => {
                             </Grid>
                             <Grid sx={{ pl: 2 }}>
                                 <Typography variant="h6">
-                                    Cutting Edge Tech
+                                    Perfect Styling
                                 </Typography>
                                 <Typography>
-                                    We ensure the latest technology
+                                    Don't be bored. Styling every single thing
+                                    is a part of life.
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -74,10 +75,11 @@ const OverView = () => {
                             </Grid>
                             <Grid sx={{ pl: 2 }}>
                                 <Typography variant="h6">
-                                    Cutting Edge Tech
+                                    Distinctive Beauty
                                 </Typography>
                                 <Typography>
-                                    We ensure the latest technology
+                                    We never compromise the beauty with
+                                    performance.
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -87,10 +89,11 @@ const OverView = () => {
                             </Grid>
                             <Grid sx={{ pl: 2 }}>
                                 <Typography variant="h6">
-                                    Cutting Edge Tech
+                                    Radiance Polishing
                                 </Typography>
                                 <Typography>
-                                    We ensure the latest technology
+                                    Get the highest quality polishing with all
+                                    our products.
                                 </Typography>
                             </Grid>
                         </Grid>
