@@ -1,0 +1,62 @@
+[
+    {
+        "name": "BMW S1000 RR",
+        "price": 27000,
+        "year": 2021,
+        "category": "Sports",
+        "brand": "BMW",
+        "power": 205,
+        "displacement": 999,
+        "img": "https://i.ibb.co/QHWcwML/bmws1000rr.png"
+    },
+    {
+        "name": "Yamaha MT10",
+        "price": 12999,
+        "year": 2020,
+        "category": "Naked Sports",
+        "brand": "Yamaha",
+        "power": 159,
+        "displacement": 998,
+        "img": "https://i.ibb.co/yYxLD0H/mt10.png"
+    },
+    {
+        "name": "Yamaha R1M",
+        "price": 32000,
+        "year": 2021,
+        "category": "Sports",
+        "brand": "Yamaha",
+        "power": 200,
+        "displacement": 998,
+        "img": "https://i.ibb.co/W69jRyK/r1m.png"
+    },
+    {
+        "name": "Honda CBR 1000RR",
+        "price": 24000,
+        "year": 2021,
+        "category": "Sports",
+        "brand": "Honda",
+        "power": 215,
+        "displacement": 999,
+        "img": "https://i.ibb.co/YDWqw8d/cbr1000.webp"
+    },
+    {
+        "name": "Kawasaki Z1000",
+        "price": 18500,
+        "year": 2021,
+        "category": "Naked Sports",
+        "brand": "Kawasaki",
+        "power": 140,
+        "displacement": 1043,
+        "img": "https://i.ibb.co/k13L2Zs/kawasakiz1000.png"
+    },
+    {
+        "name": "Ducati Panigale V4",
+        "price": 39995,
+        "year": 2021,
+        "category": "Sports",
+        "brand": "Ducati",
+        "power": 216,
+        "displacement": 1103,
+        "img": "https://i.ibb.co/8BbTMJj/ducativ4.png"
+    }
+]
