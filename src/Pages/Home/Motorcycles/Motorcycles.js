@@ -6,7 +6,7 @@ import Motorcycle from "../../Motorcycle/Motorcycle";
 const Motorcycles = () => {
     const [motorcycles, setMotorcycles] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/motorcycles")
+        fetch("http://localhost:5000/motorcycles?cap=6")
             .then((res) => res.json())
             .then((data) => setMotorcycles(data))
             .catch((error) => console.log(error.message));
