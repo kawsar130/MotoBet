@@ -1,9 +1,9 @@
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import Motorcycle from "../../Motorcycle/Motorcycle";
+import Motorcycle from "../Motorcycle/Motorcycle";
 
-const Motorcycles = () => {
+const AllMotorcycles = () => {
     const [motorcycles, setMotorcycles] = useState([]);
     useEffect(() => {
         fetch("http://localhost:5000/motorcycles")
@@ -13,7 +13,7 @@ const Motorcycles = () => {
     }, [motorcycles]);
     return (
         <Box sx={{ mb: 5 }}>
-            <h1>Our Popular Motorcycles</h1>
+            <h1>Our Motorcycle Collection</h1>
             {!motorcycles.length ? (
                 <div style={{ height: "50vh" }}>
                     <Typography>Loading..</Typography>
@@ -37,4 +37,4 @@ const Motorcycles = () => {
     );
 };
 
-export default Motorcycles;
+export default AllMotorcycles;

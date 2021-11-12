@@ -8,7 +8,8 @@ const url = "https://i.ibb.co/zmCSF7f/footer.jpg";
 const footer = {
     background: `url(${url})`,
     backgroundColor: "rgba(0, 0, 0, 0.80)",
-    backgroundBlendMode: "darken, luminosity"
+    backgroundBlendMode: "darken, luminosity",
+    marginTop: "4em"
 };
 
 const Footer = () => {

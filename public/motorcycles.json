@@ -7,7 +7,8 @@
         "brand": "BMW",
         "power": 205,
         "displacement": 999,
-        "img": "https://i.ibb.co/QHWcwML/bmws1000rr.png"
+        "img": "https://i.ibb.co/gz9sktn/bmws1000rr.png",
+        "description": "In 2009, the BMW Motorrad manufactured a racing sports bike to compete in the Superbike World Championship. At present, the racing sports bike is in commercial production and is called the BMW S 1000 RR. I was first introduced in Munich in the year 2008, April. The production of BMW S 1000 RR was expanded for commercial sale in 2010. The sports bike is formidable because of its aerodynamic look and top-shelf accessories. The upgraded version of the BMW S 1000 RR motorbike is expected to be launched in India in June 2021. There are three variants offered by the sports bike- Pro BS6, STD BS6 and Pro M Sport BS6. It is a two-seater European made sports bike with several high performing features. The bike has a 4-cylinder 4-stroke and 4-titanium valves petrol engine with an engine displacement of 999 cc. The sports bike also has a BMW ShiftCam. S 1000 RR has a mileage of about 12 kmpl with a fuel capacity of 16.5 L. Some of the standard features of the sports bike are a self-start engine, aluminum cast wheels, ABS dual-channel, Tubeless tyres, LED tail lights, Low fuel warning, pass switch, digital speedometer, digital trip meter, passenger footrest, clock and many more. The bike is sporty yet comfortable even at high speed."
     },
     {
         "name": "Yamaha MT10",
@@ -17,7 +18,8 @@
         "brand": "Yamaha",
         "power": 159,
         "displacement": 998,
-        "img": "https://i.ibb.co/yYxLD0H/mt10.png"
+        "img": "https://i.ibb.co/yYxLD0H/mt10.png",
+        "description": "Yamaha MT-10 is a liter class naked street fighter that is actually based on the architecture of the famous Yamaha R1. The best part is that it has been optimized for street oriented driving that helps the same components achieve a comfort oriented approach on the relaxed rider. It is powered by a 998cc, inline 4 engine producing 158 BHP and 111 Nm of torque. The motorcycle weighs 210 kg and claims a top speed of electronically controlled 250 kmph. The huge 17 liter fuel tank helps it provide a great range while its competition include bikes like Suzuki GSX-S1000, Honda CB1000R and Kawasaki Z1000."
     },
     {
         "name": "Yamaha R1M",
@@ -27,7 +29,8 @@
         "brand": "Yamaha",
         "power": 200,
         "displacement": 998,
-        "img": "https://i.ibb.co/W69jRyK/r1m.png"
+        "img": "https://i.ibb.co/W69jRyK/r1m.png",
+        "description": "The R1M remains the pinnacle of Yamaha supersport motorcycles, and short of grabbing one of Valentino Rossi’s old MotoGP bikes, this is the most performance you can have with the tuning forks logo. For 2018, Yamaha has left the driveline the same – most of us would be happy with figures of 197bhp and 112Nm from a crossplane four-cylinder motor – but upgraded the electronics package. Therefore, in addition to the 6-axis IMU which controls traction control, ABS, slide control, lift control, and launch control, the R1M gets Ohlins semi-active suspension which adjusts the compression and rebound on the go, depending upon the feedback it receives from the sensors. It is called the Ohlins Smart EC 2ERS. It gets an updated quickshifter that now allows it clutchless downshifts as well."
     },
     {
         "name": "Honda CBR 1000RR",
@@ -37,7 +40,8 @@
         "brand": "Honda",
         "power": 215,
         "displacement": 999,
-        "img": "https://i.ibb.co/YDWqw8d/cbr1000.webp"
+        "img": "https://i.ibb.co/VpXxysk/kawasakiz1000.png",
+        "description": "The Honda CBR 1000RR Fireblade is the flagship sports motorcycle from Honda and it comes with an aggressive design. The engine is a liquid cooled 999 cc four cylinder beast that churns out 189 BHP and 114 Nm of peak torque. The key features include a digital instrument cluster, C-ABS, gas charged and telescopic forks at rear and front and LED lamp for the tail light cluster. The sports bike may offer 280 kilometers of range on a full tank and offers a fun and engaging riding experience both for long distance/highway rides and in-city traveling."
     },
     {
         "name": "Kawasaki Z1000",
@@ -47,7 +51,8 @@
         "brand": "Kawasaki",
         "power": 140,
         "displacement": 1043,
-        "img": "https://i.ibb.co/k13L2Zs/kawasakiz1000.png"
+        "img": "https://i.ibb.co/k13L2Zs/kawasakiz1000.png",
+        "description": "Z1000 is the most powerful streetfighter in Kawasaki's stable. The design is one of the most aggressive and sharpest in its category and described as the Sugomi design according to which the motorcycle looks like a predator ready to pounce on its prey. Powered by a 1043cc inline 4 liquid-cooled DOHC 16-valve engine, the Z1000 produces 142 PS of power and 111 NM of torque. The bodywork is minimalist at the front and back, however, the motorcycle still looks quite substantial. There are dual discs at the front along with SFFBPF upside-down forks while the rear consists of a horizontal back-link monoshock. ABS comes standard."
     },
     {
         "name": "Ducati Panigale V4",
@@ -57,6 +62,7 @@
         "brand": "Ducati",
         "power": 216,
         "displacement": 1103,
-        "img": "https://i.ibb.co/8BbTMJj/ducativ4.png"
+        "img": "https://i.ibb.co/nCJ6wwC/ducatiV4.png",
+        "description": "The 2021 Ducati Panigale V4 meets new emission regulations, and also gets some minor tweaks, to both the standarad V4 and V4 S variants. While maintaining the latest Bharat Stage VI (BS6) emission regulations, the updated Panigale V4 and V4 S maintain the same power and torque levels of the 2020 model. The 1,103 cc Desmosedici Stradale, V4 engine continues to produce 214 bhp at 13,000 rpm and 124 Nm of peak torque at 9,500 rpm. The exhaust on the 2021 Panigale V4 uses larger catalysts to maintain the same power, while lowering emissions, as well as adopting a new technology of impregnation of noble metals to maximise the ability to convert polluting gases. The new Panigale V4 features a series of structural, aerodynamic and electronic changes designed to increase speed and responsiveness on track."
     }
 ]

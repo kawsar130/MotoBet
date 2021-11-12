@@ -9,6 +9,8 @@ import Register from "./Pages/Login/Register/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import MotorcycleDetail from "./Pages/MotorcycleDetail/MotorcycleDetail";
+import AllMotorcycles from "./Pages/AllMotorcycles/AllMotorcycles";
 
 function App() {
     return (
@@ -26,6 +28,12 @@ function App() {
                         <Route path="/register">
                             <Register></Register>
                         </Route>
+                        <Route path="/allMotorcycles">
+                            <AllMotorcycles></AllMotorcycles>
+                        </Route>
+                        <PrivateRoute path="/motorcycle/:motorcycleId">
+                            <MotorcycleDetail></MotorcycleDetail>
+                        </PrivateRoute>
                         <PrivateRoute path="/dashboard">
                             <Dashboard></Dashboard>
                         </PrivateRoute>

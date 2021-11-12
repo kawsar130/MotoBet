@@ -42,6 +42,15 @@ const NavBar = () => {
                             width: "100%"
                         }}
                     >
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "white"
+                            }}
+                            to="/allMotorcycles"
+                        >
+                            <Button color="inherit">Motorcycles</Button>
+                        </NavLink>
                         {user?.email ? (
                             <Box>
                                 <NavLink
