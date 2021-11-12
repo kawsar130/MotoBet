@@ -10,7 +10,7 @@ const Motorcycles = () => {
             .then((res) => res.json())
             .then((data) => setMotorcycles(data))
             .catch((error) => console.log(error.message));
-    }, [motorcycles]);
+    }, []);
     return (
         <Box sx={{ mb: 5 }}>
             <h1>Our Popular Motorcycles</h1>

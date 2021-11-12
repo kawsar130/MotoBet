@@ -65,6 +65,21 @@ const NavBar = () => {
                                 <Button onClick={logOut} color="inherit">
                                     LogOut
                                 </Button>
+                                <Box style={{ display: "inline" }}>
+                                    <Button variant="outlined" color="inherit">
+                                        <img
+                                            style={{
+                                                width: "22px",
+                                                height: "22px",
+                                                marginRight: "10px",
+                                                borderRadius: "50%"
+                                            }}
+                                            src={user.photoURL}
+                                            alt=""
+                                        />
+                                        {user.displayName}
+                                    </Button>
+                                </Box>
                             </Box>
                         ) : (
                             <NavLink
