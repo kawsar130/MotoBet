@@ -39,7 +39,7 @@ const OrderModal = ({
         const order = {
             ...orderInfo,
             productName: foundMotorcycle.name,
-            productId: foundMotorcycle._Id
+            productData: foundMotorcycle
         };
 
         // Send to the server
@@ -91,6 +91,7 @@ const OrderModal = ({
                             size="small"
                         />
                         <TextField
+                            required
                             sx={{ width: "90%", mb: 1 }}
                             id="outlined-size-small"
                             name="customerName"
@@ -99,6 +100,7 @@ const OrderModal = ({
                             size="small"
                         />
                         <TextField
+                            required
                             sx={{ width: "90%", mb: 1 }}
                             id="outlined-size-small"
                             name="email"
@@ -107,19 +109,21 @@ const OrderModal = ({
                             size="small"
                         />
                         <TextField
+                            required
                             sx={{ width: "90%", mb: 1 }}
                             id="outlined-size-small"
                             onBlur={handleOnBlur}
                             name="phone"
-                            defaultValue="Your Phone Number"
+                            placeholder="Mobile Number"
                             size="small"
                         />
                         <TextField
+                            required
                             sx={{ width: "90%", mb: 1 }}
                             id="outlined-size-small"
                             onBlur={handleOnBlur}
                             name="address"
-                            defaultValue="Your delivery address"
+                            placeholder="Address"
                             size="small"
                         />
 

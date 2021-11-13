@@ -1,0 +1,11 @@
+.spec-box-container {
+    display: flex;
+    justify-content: center;
+}
+
+.spec-box {
+    width: 85%;
+    padding: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(153, 11, 11, 0.04);
+}

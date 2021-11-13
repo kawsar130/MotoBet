@@ -12,6 +12,8 @@ import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import OrderModal from "../Orders/OrderModal/OrderModal";
+import NavBar from "../../Shared/NavBar/NavBar";
+import "./MotorcycleDetail.css";
 
 const thumbsUp = "https://i.ibb.co/cvxSQhR/thumbsUp.png";
 
@@ -65,128 +67,173 @@ const MotorcycleDetail = () => {
     }
 
     return (
-        <Container sx={{ py: 5, backgroundColor: "lavenderblush" }}>
-            <Box>
-                <Typography variant="h2" sx={{ fontWeight: "bold" }}>
-                    {name}
-                </Typography>
-            </Box>
-            <Box sx={{ mb: 5 }}>
-                <img
-                    src={img}
-                    alt=""
-                    style={{ width: "100%", maxWidth: "640px" }}
-                />
-            </Box>
-            <Box>
+        <Box>
+            <NavBar></NavBar>
+            <Container sx={{ py: 5, backgroundColor: "lavenderblush" }}>
+                <Box>
+                    <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+                        {name}
+                    </Typography>
+                </Box>
                 <Box sx={{ mb: 5 }}>
-                    <Typography variant="h3" sx={{ mb: 2 }}>
-                        Motorcycle Overview
-                    </Typography>
-                    <Typography>{description}</Typography>
+                    <img
+                        src={img}
+                        alt=""
+                        style={{ width: "100%", maxWidth: "640px" }}
+                    />
                 </Box>
-                <Box
-                    sx={{
-                        py: 5,
-                        border: 2,
-                        borderColor: "lightgrey",
-                        borderRadius: 1
-                    }}
-                >
-                    <Typography variant="h4" sx={{ mb: 5 }}>
-                        Details Specification
-                    </Typography>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} md={6} sx={{ py: 5 }}>
-                            <Box>
-                                <Typography variant="h5">Brand</Typography>
-                                <Typography variant="subtitle1">
-                                    {brand}
-                                </Typography>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={6} sx={{ py: 5 }}>
-                            <Box>
-                                <Typography variant="h5">Category</Typography>
-                                <Typography variant="subtitle1">
-                                    {category}
-                                </Typography>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={6} sx={{ py: 5 }}>
-                            <Box>
-                                <Typography variant="h5">
-                                    Engine Displacement
-                                </Typography>
-                                <Typography variant="subtitle1">
-                                    {displacement} CC
-                                </Typography>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={6} sx={{ py: 5 }}>
-                            <Box>
-                                <Typography variant="h5">
-                                    Engine Power
-                                </Typography>
-                                <Typography variant="subtitle1">
-                                    {power} BHP
-                                </Typography>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={6} sx={{ py: 5 }}>
-                            <Box>
-                                <Typography variant="h5">
-                                    Year Release
-                                </Typography>
-                                <Typography variant="subtitle1">
-                                    {year}
-                                </Typography>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={6} sx={{ py: 5 }}>
-                            <Box>
-                                <Typography variant="h5">Price</Typography>
-                                <Typography variant="subtitle1">
-                                    ${price}
-                                </Typography>
-                            </Box>
-                        </Grid>
-                    </Grid>
-                </Box>
-            </Box>
-            <Box sx={{ mt: 5 }}>
-                {!orderSuccess ? (
-                    <Button onClick={handleOrderOpen} variant="contained">
-                        Place Order
-                    </Button>
-                ) : (
-                    <Box>
-                        <Typography variant="h5">Congrats!</Typography>
-                        <Typography variant="h5">
-                            Your Order Has Placed Successfully
+                <Box>
+                    <Box sx={{ mb: 5 }}>
+                        <Typography variant="h3" sx={{ mb: 2 }}>
+                            Motorcycle Overview
                         </Typography>
-                        <Typography>
-                            Your {name} is on the way to Home! ;-)
-                        </Typography>
-                        <Box sx={{ mt: 5 }}>
-                            <img
-                                style={{ width: "100%", maxWidth: "500px" }}
-                                src={thumbsUp}
-                                alt=""
-                            />
-                        </Box>
+                        <Typography>{description}</Typography>
                     </Box>
-                )}
-            </Box>
-            <OrderModal
-                handleOrderClose={handleOrderClose}
-                openOrder={openOrder}
-                foundMotorcycle={foundMotorcycle}
-                setOrderSuccess={setOrderSuccess}
-                orderInfo={orderInfo}
-                setOrderInfo={setOrderInfo}
-            ></OrderModal>
-        </Container>
+                    <Box
+                        sx={{
+                            py: 5
+                        }}
+                    >
+                        <Typography variant="h4" sx={{ mb: 5 }}>
+                            Details Specification
+                        </Typography>
+                        <Grid container spacing={1}>
+                            <Grid
+                                item
+                                xs={12}
+                                md={6}
+                                sx={{ py: 5 }}
+                                className="spec-box-container"
+                            >
+                                <Box className="spec-box">
+                                    <Typography variant="subtitle1">
+                                        Brand
+                                    </Typography>
+                                    <Typography variant="h5">
+                                        {brand}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12}
+                                md={6}
+                                sx={{ py: 5 }}
+                                className="spec-box-container"
+                            >
+                                <Box className="spec-box">
+                                    <Typography variant="subtitle1">
+                                        Category
+                                    </Typography>
+                                    <Typography variant="h5">
+                                        {category}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12}
+                                md={6}
+                                sx={{ py: 5 }}
+                                className="spec-box-container"
+                            >
+                                <Box className="spec-box">
+                                    <Typography variant="subtitle1">
+                                        Engine Displacement
+                                    </Typography>
+                                    <Typography variant="h5">
+                                        {displacement} CC
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12}
+                                md={6}
+                                sx={{ py: 5 }}
+                                className="spec-box-container"
+                            >
+                                <Box className="spec-box">
+                                    <Typography variant="subtitle1">
+                                        Power
+                                    </Typography>
+                                    <Typography variant="h5">
+                                        {power} BHP
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12}
+                                md={6}
+                                sx={{ py: 5 }}
+                                className="spec-box-container"
+                            >
+                                <Box className="spec-box">
+                                    <Typography variant="subtitle1">
+                                        Year Released
+                                    </Typography>
+                                    <Typography variant="h5">{year}</Typography>
+                                </Box>
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12}
+                                md={6}
+                                sx={{ py: 5 }}
+                                className="spec-box-container"
+                            >
+                                <Box className="spec-box">
+                                    <Typography variant="subtitle1">
+                                        Price
+                                    </Typography>
+                                    <Typography variant="h5">
+                                        ${price}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Box>
+                <Box>
+                    {!orderSuccess ? (
+                        <Button
+                            onClick={handleOrderOpen}
+                            variant="contained"
+                            color="success"
+                            size="large"
+                        >
+                            Place Order
+                        </Button>
+                    ) : (
+                        <Box>
+                            <Typography variant="h5">Congrats!</Typography>
+                            <Typography variant="h5">
+                                Your Order Has Placed Successfully
+                            </Typography>
+                            <Typography>
+                                Your {name} is on the way to Home! ;-)
+                            </Typography>
+                            <Box sx={{ mt: 5 }}>
+                                <img
+                                    style={{ width: "100%", maxWidth: "500px" }}
+                                    src={thumbsUp}
+                                    alt=""
+                                />
+                            </Box>
+                        </Box>
+                    )}
+                </Box>
+                <OrderModal
+                    handleOrderClose={handleOrderClose}
+                    openOrder={openOrder}
+                    foundMotorcycle={foundMotorcycle}
+                    setOrderSuccess={setOrderSuccess}
+                    orderInfo={orderInfo}
+                    setOrderInfo={setOrderInfo}
+                ></OrderModal>
+            </Container>
+        </Box>
     );
 };
 

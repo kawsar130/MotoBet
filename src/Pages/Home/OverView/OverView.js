@@ -12,14 +12,21 @@ const OverView = () => {
     return (
         <Container sx={{ flexGrow: 1, mt: 20 }}>
             <Grid container spacing={2} style={{ display: "flex" }}>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} sm={12} md={12} lg={5}>
                     <img
                         style={{ height: "80%" }}
                         src="https://i.ibb.co/02BTnWG/overview.jpg"
                         alt=""
                     />
                 </Grid>
-                <Grid sx={{ textAlign: "left" }} item xs={12} md={7}>
+                <Grid
+                    sx={{ textAlign: "left" }}
+                    item
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    lg={7}
+                >
                     <Box>
                         <Typography
                             variant="h6"

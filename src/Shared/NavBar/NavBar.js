@@ -65,7 +65,7 @@ const NavBar = () => {
                                 <Button onClick={logOut} color="inherit">
                                     LogOut
                                 </Button>
-                                <Box style={{ display: "inline" }}>
+                                <Box style={{ display: "inline-block" }}>
                                     <Button variant="outlined" color="inherit">
                                         <img
                                             style={{
