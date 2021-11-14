@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Typography } from "@mui/material";
 import "./Banner.css";
 import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -17,19 +18,21 @@ const Banner = () => {
                 <Typography variant="h5" sx={{ color: "white" }}>
                     Let's make a extraordinary move with us.
                 </Typography>
-                <Button
-                    size="large"
-                    sx={{
-                        mt: 4,
-                        color: "white",
-                        border: 2,
-                        "&:hover": {
-                            backgroundColor: "#7a1f1f"
-                        }
-                    }}
-                >
-                    Explore Our Products
-                </Button>
+                <Link to="/allMotorcycles" style={{ textDecoration: "none" }}>
+                    <Button
+                        size="large"
+                        sx={{
+                            mt: 4,
+                            color: "white",
+                            border: 2,
+                            "&:hover": {
+                                backgroundColor: "#7a1f1f"
+                            }
+                        }}
+                    >
+                        Explore Our Products
+                    </Button>
+                </Link>
             </Box>
         </div>
     );

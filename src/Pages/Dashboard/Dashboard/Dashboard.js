@@ -6,26 +6,33 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Button, Grid, ListItemButton } from "@mui/material";
-import Orders from "../Orders/Orders";
+import { Button } from "@mui/material";
+
 import { NavLink } from "react-router-dom";
 
-const orderImg = "https://i.ibb.co/RYpzf46/order.png";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
+import DashboardHome from "../DashboardHome/DashboardHome";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import Payment from "../Payment/Payment";
+import AddMotorcycle from "../AddMotorcycle/AddMotorcycle";
+import MyReview from "../MyReview/MyReview";
+import useAuth from "../../../hooks/useAuth";
+import AdminRoute from "../../Login/AdminRoute/AdminRoute";
+import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
+import ManageProducts from "../ManageProducts/ManageProducts";
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const { admin, logOut } = useAuth();
+    let { path, url } = useRouteMatch();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -37,25 +44,109 @@ function Dashboard(props) {
 
             <Divider />
 
-            <List style={{ display: "flex", flexDirection: "column" }}>
-                <NavLink
-                    style={{
-                        textDecoration: "none",
-                        color: "grey"
-                    }}
-                    to="/home"
-                >
-                    <Button color="inherit">Home</Button>
-                </NavLink>
-                <NavLink
-                    style={{
-                        textDecoration: "none",
-                        color: "grey"
-                    }}
-                    to="/allMotorcycles"
-                >
-                    <Button color="inherit">Order Motorcycles</Button>
-                </NavLink>
+            <List>
+                {admin ? (
+                    <Box style={{ display: "flex", flexDirection: "column" }}>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to={`${url}/manageAllOrders`}
+                        >
+                            <Button color="inherit">Manage All Orders</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to={`${url}/addMotorcycle`}
+                        >
+                            <Button color="inherit">Add Motorcycle</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to={`${url}/manageProducts`}
+                        >
+                            <Button color="inherit">Manage Products</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to={`${url}/makeAdmin`}
+                        >
+                            <Button color="inherit">Make Admin</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to="/home"
+                        >
+                            <Button color="inherit">Home Page</Button>
+                        </NavLink>
+                    </Box>
+                ) : (
+                    <Box style={{ display: "flex", flexDirection: "column" }}>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to={`${url}`}
+                        >
+                            <Button color="inherit">My orders</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to={`${url}/myReview`}
+                        >
+                            <Button color="inherit">Reviews</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to={`${url}/payment`}
+                        >
+                            <Button color="inherit">Payment</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to="/home"
+                        >
+                            <Button color="inherit">Home Page</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{
+                                textDecoration: "none",
+                                color: "grey"
+                            }}
+                            to="/allMotorcycles"
+                        >
+                            <Button color="inherit">All Motorcycles</Button>
+                        </NavLink>
+                    </Box>
+                )}
+                <Box sx={{ mt: 1 }}>
+                    <Button onClick={logOut} variant="outlined" color="error">
+                        LogOut
+                    </Button>
+                </Box>
             </List>
         </div>
     );
@@ -134,21 +225,31 @@ function Dashboard(props) {
                 }}
             >
                 <Toolbar />
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={9}>
-                        <Box>
-                            <Orders></Orders>
-                        </Box>
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        md={3}
-                        style={{ display: "flex", alignItems: "center" }}
-                    >
-                        <img style={{ width: "100%" }} src={orderImg} alt="" />
-                    </Grid>
-                </Grid>
+                <Switch>
+                    <Route exact path={path}>
+                        <DashboardHome></DashboardHome>
+                    </Route>
+                    <AdminRoute path={`${path}/makeAdmin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addMotorcycle`}>
+                        <AddMotorcycle></AddMotorcycle>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageAllOrders`}>
+                        <ManageAllOrders></ManageAllOrders>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
+                    </AdminRoute>
+
+                    <Route path={`${path}/payment`}>
+                        <Payment></Payment>
+                    </Route>
+
+                    <Route path={`${path}/myReview`}>
+                        <MyReview></MyReview>
+                    </Route>
+                </Switch>
             </Box>
         </Box>
     );

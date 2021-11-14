@@ -1,16 +1,17 @@
-import { Alert } from "@mui/material";
+import { Alert, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Order from "../Order/Order";
 
-const Orders = () => {
-    const { user } = useAuth();
+const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const [deleteStatus, setDeleteStatus] = useState("");
+    const [updateStatus, setUpdateStatus] = useState("");
+    const { admin } = useAuth();
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`;
+        const url = "http://localhost:5000/orders";
         fetch(url)
             .then((res) => res.json())
             .then((data) => setOrders(data))
@@ -18,7 +19,7 @@ const Orders = () => {
     }, [orders]);
 
     const handleDelete = (id) => {
-        const confirm = window.confirm("Are you sure you want to cancel this?");
+        const confirm = window.confirm("Are you sure you want to update this?");
         if (confirm) {
             fetch(`http://localhost:5000/deleteOrder/${id}`, {
                 method: "DELETE",
@@ -27,17 +28,48 @@ const Orders = () => {
                 .then((res) => res.json())
                 .then((result) => {
                     result.deletedCount === 1
-                        ? setDeleteStatus("Order Cancelled Successfully.")
-                        : setDeleteStatus("Order could not be cancelled!");
+                        ? setDeleteStatus("Order deleted successfully.")
+                        : setDeleteStatus("Order could not be deleted!");
+                    setUpdateStatus("");
                 })
                 .catch((err) => console.error(err));
         }
     };
+    const handleUpdate = (id) => {
+        const orderStatus = { status: "Shipped" };
+
+        fetch(`http://localhost:5000/updateOrder/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(orderStatus)
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                result.modifiedCount === 1
+                    ? setUpdateStatus("Delivery Status updated to 'Shipped'.")
+                    : setUpdateStatus("Delivery Status could not be updated!");
+                setDeleteStatus("");
+            })
+            .catch((err) => console.error(err));
+    };
 
     return (
         <div>
-            <h2>Your Order Summary</h2>
+            <h2>Manage All Orders</h2>
+            <Typography>Orders Found Total: {orders.length}</Typography>
             {deleteStatus && (
+                <Alert
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        marginBottom: "10px"
+                    }}
+                    severity="warning"
+                >
+                    {deleteStatus}
+                </Alert>
+            )}
+            {updateStatus && (
                 <Alert
                     style={{
                         display: "flex",
@@ -46,10 +78,10 @@ const Orders = () => {
                     }}
                     severity="info"
                 >
-                    {deleteStatus}
+                    {updateStatus}
                 </Alert>
             )}
-            {!orders.length && (
+            {!orders.length && !admin && (
                 <Alert
                     style={{ display: "flex", justifyContent: "center" }}
                     severity="info"
@@ -68,16 +100,25 @@ const Orders = () => {
                     </strong>
                 </Alert>
             )}
+            {!orders.length && admin && (
+                <Alert
+                    style={{ display: "flex", justifyContent: "center" }}
+                    severity="info"
+                >
+                    No Order Found! Keep EYE on Marketing Department!
+                </Alert>
+            )}
             {orders &&
                 orders.map((order) => (
                     <Order
                         key={order._id}
                         order={order}
                         handleDelete={handleDelete}
+                        handleUpdate={handleUpdate}
                     ></Order>
                 ))}
         </div>
     );
 };
 
-export default Orders;
+export default ManageAllOrders;

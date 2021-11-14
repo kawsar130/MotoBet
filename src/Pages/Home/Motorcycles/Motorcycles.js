@@ -8,6 +8,7 @@ import {
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../../../Shared/NavBar/NavBar";
 import Motorcycle from "../../Motorcycle/Motorcycle";
 
 const Motorcycles = () => {

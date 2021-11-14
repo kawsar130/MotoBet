@@ -8,7 +8,8 @@ import {
     signOut,
     onAuthStateChanged,
     signInWithPopup,
-    GoogleAuthProvider
+    GoogleAuthProvider,
+    getIdToken
 } from "firebase/auth";
 
 // Initializing firebase
@@ -17,6 +18,8 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState("");
+    const [admin, setAdmin] = useState(false);
+    const [token, setToken] = useState("");
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -85,6 +88,9 @@ const useFirebase = () => {
             setIsLoading(true);
             if (user) {
                 setUser(user);
+                getIdToken(user).then((idToken) => {
+                    setToken(idToken);
+                });
             } else {
                 setUser({});
             }
@@ -92,6 +98,12 @@ const useFirebase = () => {
         });
         return () => unsubscribe;
     }, [auth]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then((res) => res.json())
+            .then((data) => setAdmin(data.admin));
+    }, [user.email]);
 
     // Logging out user
     const logOut = () => {
@@ -119,6 +131,8 @@ const useFirebase = () => {
 
     return {
         user,
+        admin,
+        token,
         isLoading,
         authError,
         registerUser,
