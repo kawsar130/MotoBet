@@ -10,7 +10,7 @@ import overview4 from "../../../Images/Icons/about-4.svg";
 
 const OverView = () => {
     return (
-        <Container sx={{ flexGrow: 1, mt: 20 }}>
+        <Container sx={{ flexGrow: 1, mt: 20, mb: 10 }}>
             <Grid container spacing={2} style={{ display: "flex" }}>
                 <Grid item xs={12} sm={12} md={12} lg={5}>
                     <img

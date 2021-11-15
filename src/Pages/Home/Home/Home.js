@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../../Shared/Footer/Footer";
+
 import NavBar from "../../../Shared/NavBar/NavBar";
 import Banner from "../Banner/Banner";
 import Motorcycles from "../Motorcycles/Motorcycles";
