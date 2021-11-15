@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import "./Banner.css";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";

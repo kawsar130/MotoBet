@@ -1,7 +1,6 @@
 import { Button, Fade, Modal, TextField, Typography } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 
 const style = {
@@ -43,7 +42,7 @@ const OrderModal = ({
         };
 
         // Send to the server
-        fetch("http://localhost:5000/orders", {
+        fetch("https://stark-beyond-32780.herokuapp.com/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

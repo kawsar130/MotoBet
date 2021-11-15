@@ -8,13 +8,12 @@ import {
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../../../Shared/NavBar/NavBar";
 import Motorcycle from "../../Motorcycle/Motorcycle";
 
 const Motorcycles = () => {
     const [motorcycles, setMotorcycles] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/motorcycles?cap=6")
+        fetch("https://stark-beyond-32780.herokuapp.com/motorcycles?cap=6")
             .then((res) => res.json())
             .then((data) => setMotorcycles(data))
             .catch((error) => console.log(error.message));

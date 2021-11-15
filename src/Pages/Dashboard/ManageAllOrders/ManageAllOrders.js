@@ -8,29 +8,39 @@ const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const [deleteStatus, setDeleteStatus] = useState("");
     const [updateStatus, setUpdateStatus] = useState("");
+    const [update, setUpdate] = useState(false);
+
     const { admin } = useAuth();
 
     useEffect(() => {
-        const url = "http://localhost:5000/orders";
+        const url = "https://stark-beyond-32780.herokuapp.com/orders";
         fetch(url)
             .then((res) => res.json())
             .then((data) => setOrders(data))
             .catch((error) => console.log(error.message));
-    }, [orders]);
+    }, [update]);
 
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you sure you want to update this?");
         if (confirm) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
-                method: "DELETE",
-                headers: { "Content-Type": "application/json" }
-            })
+            fetch(
+                `https://stark-beyond-32780.herokuapp.com/deleteOrder/${id}`,
+                {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" }
+                }
+            )
                 .then((res) => res.json())
                 .then((result) => {
                     result.deletedCount === 1
                         ? setDeleteStatus("Order deleted successfully.")
                         : setDeleteStatus("Order could not be deleted!");
                     setUpdateStatus("");
+                    if (update) {
+                        setUpdate(false);
+                    } else {
+                        setUpdate(true);
+                    }
                 })
                 .catch((err) => console.error(err));
         }
@@ -38,7 +48,7 @@ const ManageAllOrders = () => {
     const handleUpdate = (id) => {
         const orderStatus = { status: "Shipped" };
 
-        fetch(`http://localhost:5000/updateOrder/${id}`, {
+        fetch(`https://stark-beyond-32780.herokuapp.com/updateOrder/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderStatus)
@@ -49,6 +59,11 @@ const ManageAllOrders = () => {
                     ? setUpdateStatus("Delivery Status updated to 'Shipped'.")
                     : setUpdateStatus("Delivery Status could not be updated!");
                 setDeleteStatus("");
+                if (update) {
+                    setUpdate(false);
+                } else {
+                    setUpdate(true);
+                }
             })
             .catch((err) => console.error(err));
     };

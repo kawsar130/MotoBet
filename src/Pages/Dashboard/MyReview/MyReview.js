@@ -1,12 +1,10 @@
 import { Alert, Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
-import useAuth from "../../../hooks/useAuth";
 
 const MyReview = () => {
     const [review, setReview] = useState({});
     const [reviewStatus, setReviewStatus] = useState(false);
-    const { user } = useAuth();
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -19,7 +17,7 @@ const MyReview = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:5000/feedback", {
+        fetch("https://stark-beyond-32780.herokuapp.com/feedback", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

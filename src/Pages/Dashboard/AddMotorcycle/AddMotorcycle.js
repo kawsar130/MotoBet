@@ -17,7 +17,7 @@ const AddMotorcycle = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:5000/motorcycles", {
+        fetch("https://stark-beyond-32780.herokuapp.com/motorcycles", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

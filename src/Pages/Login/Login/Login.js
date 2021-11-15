@@ -16,8 +16,7 @@ const loginImg = "https://i.ibb.co/8NYBp1g/login.jpg";
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, signInWithGoogle, isLoading, authError } =
-        useAuth();
+    const { loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();

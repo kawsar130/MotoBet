@@ -1,6 +1,5 @@
 import {
     Alert,
-    Button,
     CircularProgress,
     Container,
     Grid,
@@ -8,35 +7,42 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useAuth from "../../../hooks/useAuth";
-import Motorcycle from "../../Motorcycle/Motorcycle";
+
 import ManageSingleProduct from "./ManageSingleProduct/ManageSingleProduct";
 
 const ManageProducts = () => {
-    const { admin } = useAuth();
     const [motorcycles, setMotorcycles] = useState([]);
     const [deleteStatus, setDeleteStatus] = useState("");
+    const [update, setUpdate] = useState(false);
 
     useEffect(() => {
-        const url = "http://localhost:5000/motorcycles";
+        const url = "https://stark-beyond-32780.herokuapp.com/motorcycles";
         fetch(url)
             .then((res) => res.json())
             .then((data) => setMotorcycles(data))
             .catch((error) => console.log(error.message));
-    }, [motorcycles]);
+    }, [update]);
 
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you sure you want to delete this?");
         if (confirm) {
-            fetch(`http://localhost:5000/deleteMotorcycle/${id}`, {
-                method: "DELETE",
-                headers: { "Content-Type": "application/json" }
-            })
+            fetch(
+                `https://stark-beyond-32780.herokuapp.com/deleteMotorcycle/${id}`,
+                {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" }
+                }
+            )
                 .then((res) => res.json())
                 .then((result) => {
                     result.deletedCount === 1
                         ? setDeleteStatus("Product Deleted Successfully.")
                         : setDeleteStatus("Product could not be deleted!");
+                    if (update) {
+                        setUpdate(false);
+                    } else {
+                        setUpdate(true);
+                    }
                 })
                 .catch((err) => console.error(err));
         }

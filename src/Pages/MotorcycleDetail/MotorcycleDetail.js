@@ -1,15 +1,8 @@
-import {
-    Alert,
-    Button,
-    CircularProgress,
-    Container,
-    Grid,
-    Typography
-} from "@mui/material";
+import { Button, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { NavLink } from "react-router-dom";
+
 import useAuth from "../../hooks/useAuth";
 import OrderModal from "../Orders/OrderModal/OrderModal";
 import NavBar from "../../Shared/NavBar/NavBar";
@@ -35,11 +28,11 @@ const MotorcycleDetail = () => {
     const handleOrderClose = () => setOpenOrder(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/motorcycles")
+        fetch("https://stark-beyond-32780.herokuapp.com/motorcycles")
             .then((res) => res.json())
             .then((data) => setMotorcycles(data))
             .catch((error) => console.log(error.message));
-    }, [motorcycles]);
+    }, []);
 
     const foundMotorcycle = motorcycles.find((x) => x._id === motorcycleId);
     let name,

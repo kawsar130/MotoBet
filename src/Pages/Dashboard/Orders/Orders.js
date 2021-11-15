@@ -8,27 +8,37 @@ const Orders = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     const [deleteStatus, setDeleteStatus] = useState("");
+    const [update, setUpdate] = useState(false);
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`;
+        const url = `https://stark-beyond-32780.herokuapp.com/orders?email=${user.email}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setOrders(data))
             .catch((error) => console.log(error.message));
-    }, [orders]);
+    }, [user.email]);
 
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you sure you want to cancel this?");
         if (confirm) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
-                method: "DELETE",
-                headers: { "Content-Type": "application/json" }
-            })
+            fetch(
+                `https://stark-beyond-32780.herokuapp.com/deleteOrder/${id}`,
+                {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" }
+                }
+            )
                 .then((res) => res.json())
                 .then((result) => {
                     result.deletedCount === 1
                         ? setDeleteStatus("Order Cancelled Successfully.")
                         : setDeleteStatus("Order could not be cancelled!");
+
+                    if (update) {
+                        setUpdate(false);
+                    } else {
+                        setUpdate(true);
+                    }
                 })
                 .catch((err) => console.error(err));
         }

@@ -6,12 +6,20 @@ import Motorcycle from "../Motorcycle/Motorcycle";
 
 const AllMotorcycles = () => {
     const [motorcycles, setMotorcycles] = useState([]);
+    const [update, setUpdate] = useState(false);
     useEffect(() => {
-        fetch("http://localhost:5000/motorcycles")
+        fetch("https://stark-beyond-32780.herokuapp.com/motorcycles")
             .then((res) => res.json())
-            .then((data) => setMotorcycles(data))
+            .then((data) => {
+                setMotorcycles(data);
+                if (update) {
+                    setUpdate(false);
+                } else {
+                    setUpdate(true);
+                }
+            })
             .catch((error) => console.log(error.message));
-    }, [motorcycles]);
+    }, []);
     return (
         <Box>
             <NavBar></NavBar>
