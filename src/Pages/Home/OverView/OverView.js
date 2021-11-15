@@ -14,7 +14,7 @@ const OverView = () => {
             <Grid container spacing={2} style={{ display: "flex" }}>
                 <Grid item xs={12} sm={12} md={12} lg={5}>
                     <img
-                        style={{ height: "80%" }}
+                        style={{ width: "100%" }}
                         src="https://i.ibb.co/02BTnWG/overview.jpg"
                         alt=""
                     />

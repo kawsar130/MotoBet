@@ -8,14 +8,11 @@ const Banner = () => {
     return (
         <div className="banner-container">
             <Box className="banner-text" sx={{ mr: 5 }}>
-                <Typography
-                    variant="h1"
-                    sx={{ fontWeight: "bold", color: "white" }}
-                >
+                <h1 className="banner-header-text">
                     Your Passion, Our Profession
-                </Typography>
+                </h1>
 
-                <Typography variant="h5" sx={{ color: "white" }}>
+                <Typography className="banner-subtext" sx={{ color: "white" }}>
                     Let's make a extraordinary move with us.
                 </Typography>
                 <Link to="/allMotorcycles" style={{ textDecoration: "none" }}>

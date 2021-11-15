@@ -10,3 +10,28 @@
 .banner-text {
     width: 50%;
 }
+
+.banner-header-text {
+    color: white;
+    width: 75%;
+    margin: auto;
+    font-size: 9vmin;
+}
+
+.banner-subtext {
+    font-size: 3vmin;
+}
+
+@media only screen and (max-width: 688px) {
+    .banner-container {
+        height: 90vh;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 991px) {
+    .package-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
