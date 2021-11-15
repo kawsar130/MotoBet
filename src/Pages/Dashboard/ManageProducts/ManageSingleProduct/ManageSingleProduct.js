@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Motorcycle = ({ motorcycle }) => {
+const ManageSingleProduct = ({ motorcycle, handleDelete }) => {
     const {
         _id,
         name,
@@ -107,17 +107,17 @@ const Motorcycle = ({ motorcycle }) => {
                     <Typography variant="body2">{displacement} CC</Typography>
                 </Box>
             </Box>
-            <Link to={`/motorcycle/${_id}`} style={{ textDecoration: "none" }}>
-                <Button
-                    variant="contained"
-                    color="success"
-                    sx={{ width: "100%" }}
-                >
-                    Buy Now
-                </Button>
-            </Link>
+
+            <Button
+                onClick={() => handleDelete(_id)}
+                variant="contained"
+                color="error"
+                sx={{ width: "100%" }}
+            >
+                Delete
+            </Button>
         </Box>
     );
 };
 
-export default Motorcycle;
+export default ManageSingleProduct;
