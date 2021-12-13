@@ -1,7 +1,7 @@
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import NavBar from "../../Shared/NavBar/NavBar";
+import NavigationBar from "../../Shared/NavigationBar/NavigationBar";
 import Motorcycle from "../Motorcycle/Motorcycle";
 
 const AllMotorcycles = () => {
@@ -22,7 +22,7 @@ const AllMotorcycles = () => {
     }, []);
     return (
         <Box>
-            <NavBar></NavBar>
+            <NavigationBar></NavigationBar>
             <Box sx={{ mb: 5 }}>
                 <h1>Our Motorcycle Collection</h1>
                 {!motorcycles.length ? (

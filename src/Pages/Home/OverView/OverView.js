@@ -35,11 +35,11 @@ const OverView = () => {
                             TAKING RIDES TO A NEWER LEVEL!
                         </Typography>
                         <Typography
-                            variant="h3"
+                            variant="h4"
                             sx={{ fontWeight: "bold" }}
                             style={{ color: "#4a1010" }}
                         >
-                            GET PERFORMANCE THAT LEAVES OTHERS BEHIND
+                            KEEP RUNNING AND LEAVE OTHERS BEHIND
                         </Typography>
                         <Typography sx={{ color: "#757272", pt: 2 }}>
                             We always prefer the bike that lasts longer, perform

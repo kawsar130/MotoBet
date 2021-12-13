@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 
 import useAuth from "../../hooks/useAuth";
 import OrderModal from "../Orders/OrderModal/OrderModal";
-import NavBar from "../../Shared/NavBar/NavBar";
+import NavigationBar from "../../Shared/NavigationBar/NavigationBar";
 import "./MotorcycleDetail.css";
 
 const thumbsUp = "https://i.ibb.co/cvxSQhR/thumbsUp.png";
@@ -61,7 +61,7 @@ const MotorcycleDetail = () => {
 
     return (
         <Box>
-            <NavBar></NavBar>
+            <NavigationBar></NavigationBar>
             <Container sx={{ py: 5, backgroundColor: "lavenderblush" }}>
                 <Box>
                     <Typography variant="h2" sx={{ fontWeight: "bold" }}>
