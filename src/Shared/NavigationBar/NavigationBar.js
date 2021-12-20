@@ -35,15 +35,10 @@ const NavigationBar = () => {
         navText: {
             color: "gray",
             textDecoration: "none"
-        },
-        navTextHover: {
-            "&:hover": {
-                backgroundColor: "rgba(255, 255, 255, 0.4)"
-            }
         }
     });
 
-    const { navIcon, navItemContainer, navText, navTextHover } = useStyle();
+    const { navIcon, navItemContainer, navText } = useStyle();
 
     const [state, setState] = React.useState(false);
 
@@ -180,7 +175,12 @@ const NavigationBar = () => {
                                 to="/allMotorcycles"
                             >
                                 <Button
-                                    className={navTextHover}
+                                    sx={{
+                                        "&:hover": {
+                                            backgroundColor:
+                                                "rgba(255, 255, 255, 0.4)"
+                                        }
+                                    }}
                                     color="inherit"
                                 >
                                     Motorcycles
@@ -196,14 +196,24 @@ const NavigationBar = () => {
                                         to="/dashboard"
                                     >
                                         <Button
-                                            className={navTextHover}
+                                            sx={{
+                                                "&:hover": {
+                                                    backgroundColor:
+                                                        "rgba(255, 255, 255, 0.4)"
+                                                }
+                                            }}
                                             color="inherit"
                                         >
                                             Dashboard
                                         </Button>
                                     </NavLink>
                                     <Button
-                                        className={navTextHover}
+                                        sx={{
+                                            "&:hover": {
+                                                backgroundColor:
+                                                    "rgba(255, 255, 255, 0.4)"
+                                            }
+                                        }}
                                         onClick={logOut}
                                         color="inherit"
                                     >
@@ -242,7 +252,12 @@ const NavigationBar = () => {
                                     to="/login"
                                 >
                                     <Button
-                                        className={navTextHover}
+                                        sx={{
+                                            "&:hover": {
+                                                backgroundColor:
+                                                    "rgba(255, 255, 255, 0.4)"
+                                            }
+                                        }}
                                         color="inherit"
                                     >
                                         Login
