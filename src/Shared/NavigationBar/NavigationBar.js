@@ -241,7 +241,12 @@ const NavigationBar = () => {
                                     }}
                                     to="/login"
                                 >
-                                    <Button color="inherit">Login</Button>
+                                    <Button
+                                        className={navTextHover}
+                                        color="inherit"
+                                    >
+                                        Login
+                                    </Button>
                                 </NavLink>
                             )}
                         </Box>
