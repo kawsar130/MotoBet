@@ -8,7 +8,7 @@ const AllMotorcycles = () => {
     const [motorcycles, setMotorcycles] = useState([]);
     const [update, setUpdate] = useState(false);
     useEffect(() => {
-        fetch("https://stark-beyond-32780.herokuapp.com/motorcycles")
+        fetch("https://sheltered-taiga-63899.herokuapp.com/motorcycles")
             .then((res) => res.json())
             .then((data) => {
                 setMotorcycles(data);

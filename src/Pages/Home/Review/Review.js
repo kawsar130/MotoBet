@@ -8,7 +8,7 @@ const reviewImg = "https://i.ibb.co/PggKkPF/feedback.png";
 const Review = () => {
     const [feedback, setFeedback] = useState([]);
     useEffect(() => {
-        fetch("https://stark-beyond-32780.herokuapp.com/feedback")
+        fetch("https://sheltered-taiga-63899.herokuapp.com/feedback")
             .then((res) => res.json())
             .then((data) => setFeedback(data))
             .catch((error) => console.log(error.message));

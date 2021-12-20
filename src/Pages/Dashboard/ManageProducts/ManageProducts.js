@@ -16,7 +16,7 @@ const ManageProducts = () => {
     const [update, setUpdate] = useState(false);
 
     useEffect(() => {
-        const url = "https://stark-beyond-32780.herokuapp.com/motorcycles";
+        const url = "https://sheltered-taiga-63899.herokuapp.com/motorcycles";
         fetch(url)
             .then((res) => res.json())
             .then((data) => setMotorcycles(data))
@@ -27,7 +27,7 @@ const ManageProducts = () => {
         const confirm = window.confirm("Are you sure you want to delete this?");
         if (confirm) {
             fetch(
-                `https://stark-beyond-32780.herokuapp.com/deleteMotorcycle/${id}`,
+                `https://sheltered-taiga-63899.herokuapp.com/deleteMotorcycle/${id}`,
                 {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" }

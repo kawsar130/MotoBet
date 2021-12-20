@@ -13,7 +13,7 @@ const ManageAllOrders = () => {
     const { admin } = useAuth();
 
     useEffect(() => {
-        const url = "https://stark-beyond-32780.herokuapp.com/orders";
+        const url = "https://sheltered-taiga-63899.herokuapp.com/orders";
         fetch(url)
             .then((res) => res.json())
             .then((data) => setOrders(data))
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
         const confirm = window.confirm("Are you sure you want to update this?");
         if (confirm) {
             fetch(
-                `https://stark-beyond-32780.herokuapp.com/deleteOrder/${id}`,
+                `https://sheltered-taiga-63899.herokuapp.com/deleteOrder/${id}`,
                 {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" }
@@ -48,7 +48,7 @@ const ManageAllOrders = () => {
     const handleUpdate = (id) => {
         const orderStatus = { status: "Shipped" };
 
-        fetch(`https://stark-beyond-32780.herokuapp.com/updateOrder/${id}`, {
+        fetch(`https://sheltered-taiga-63899.herokuapp.com/updateOrder/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderStatus)

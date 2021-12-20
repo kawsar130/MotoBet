@@ -15,7 +15,7 @@ const MakeAdmin = () => {
     const handleAdminSubmit = (e) => {
         const user = { email };
         e.preventDefault();
-        fetch("https://stark-beyond-32780.herokuapp.com/users/admin", {
+        fetch("https://sheltered-taiga-63899.herokuapp.com/users/admin", {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${token}`,

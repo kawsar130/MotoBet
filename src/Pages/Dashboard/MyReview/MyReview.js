@@ -17,7 +17,7 @@ const MyReview = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch("https://stark-beyond-32780.herokuapp.com/feedback", {
+        fetch("https://sheltered-taiga-63899.herokuapp.com/feedback", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -11,7 +11,7 @@ const Orders = () => {
     const [update, setUpdate] = useState(false);
 
     useEffect(() => {
-        const url = `https://stark-beyond-32780.herokuapp.com/orders?email=${user.email}`;
+        const url = `https://sheltered-taiga-63899.herokuapp.com/orders?email=${user.email}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setOrders(data))
@@ -22,7 +22,7 @@ const Orders = () => {
         const confirm = window.confirm("Are you sure you want to cancel this?");
         if (confirm) {
             fetch(
-                `https://stark-beyond-32780.herokuapp.com/deleteOrder/${id}`,
+                `https://sheltered-taiga-63899.herokuapp.com/deleteOrder/${id}`,
                 {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" }

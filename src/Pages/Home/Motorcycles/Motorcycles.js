@@ -13,7 +13,7 @@ import Motorcycle from "../../Motorcycle/Motorcycle";
 const Motorcycles = () => {
     const [motorcycles, setMotorcycles] = useState([]);
     useEffect(() => {
-        fetch("https://stark-beyond-32780.herokuapp.com/motorcycles?cap=6")
+        fetch("https://sheltered-taiga-63899.herokuapp.com/motorcycles?cap=6")
             .then((res) => res.json())
             .then((data) => setMotorcycles(data))
             .catch((error) => console.log(error.message));

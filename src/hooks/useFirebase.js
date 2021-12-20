@@ -100,7 +100,7 @@ const useFirebase = () => {
     }, [auth]);
 
     useEffect(() => {
-        fetch(`https://stark-beyond-32780.herokuapp.com/users/${user.email}`)
+        fetch(`https://sheltered-taiga-63899.herokuapp.com/users/${user.email}`)
             .then((res) => res.json())
             .then((data) => setAdmin(data.admin));
     }, [user.email]);
@@ -120,7 +120,7 @@ const useFirebase = () => {
 
     const saveUserToDB = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch("https://stark-beyond-32780.herokuapp.com/users", {
+        fetch("https://sheltered-taiga-63899.herokuapp.com/users", {
             method: method,
             headers: {
                 "content-type": "application/json"

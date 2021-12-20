@@ -42,7 +42,7 @@ const OrderModal = ({
         };
 
         // Send to the server
-        fetch("https://stark-beyond-32780.herokuapp.com/orders", {
+        fetch("https://sheltered-taiga-63899.herokuapp.com/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
