@@ -23,7 +23,7 @@ const Banner = () => {
                             color: "white",
                             border: 2,
                             "&:hover": {
-                                backgroundColor: "#7a1f1f"
+                                backgroundColor: "rgba(255, 255, 255, 0.4)"
                             }
                         }}
                     >

@@ -23,22 +23,27 @@ const NavigationBar = () => {
     const theme = useTheme();
     const useStyle = makeStyles({
         navIcon: {
-            [theme.breakpoints.up("sm")]: {
+            [theme.breakpoints.up("md")]: {
                 display: "none !important"
             }
         },
         navItemContainer: {
-            [theme.breakpoints.down("sm")]: {
+            [theme.breakpoints.down("md")]: {
                 display: "none !important"
             }
         },
         navText: {
             color: "gray",
             textDecoration: "none"
+        },
+        navTextHover: {
+            "&:hover": {
+                backgroundColor: "rgba(255, 255, 255, 0.4)"
+            }
         }
     });
 
-    const { navIcon, navItemContainer, navText } = useStyle();
+    const { navIcon, navItemContainer, navText, navTextHover } = useStyle();
 
     const [state, setState] = React.useState(false);
 
@@ -174,7 +179,12 @@ const NavigationBar = () => {
                                 }}
                                 to="/allMotorcycles"
                             >
-                                <Button color="inherit">Motorcycles</Button>
+                                <Button
+                                    className={navTextHover}
+                                    color="inherit"
+                                >
+                                    Motorcycles
+                                </Button>
                             </NavLink>
                             {user?.email ? (
                                 <Box>
@@ -185,14 +195,26 @@ const NavigationBar = () => {
                                         }}
                                         to="/dashboard"
                                     >
-                                        <Button color="inherit">
+                                        <Button
+                                            className={navTextHover}
+                                            color="inherit"
+                                        >
                                             Dashboard
                                         </Button>
                                     </NavLink>
-                                    <Button onClick={logOut} color="inherit">
+                                    <Button
+                                        className={navTextHover}
+                                        onClick={logOut}
+                                        color="inherit"
+                                    >
                                         LogOut
                                     </Button>
-                                    <Box style={{ display: "inline-block" }}>
+                                    <Box
+                                        style={{
+                                            display: "inline-block",
+                                            marginLeft: "10px"
+                                        }}
+                                    >
                                         <Button
                                             variant="outlined"
                                             color="inherit"

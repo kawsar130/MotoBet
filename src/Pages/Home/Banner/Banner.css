@@ -24,14 +24,30 @@
 
 @media only screen and (max-width: 688px) {
     .banner-container {
-        height: 90vh;
+        height: 100vh;
         justify-content: center;
         width: 100%;
+        background-position: 45% 50%;
     }
 }
 
 @media only screen and (min-width: 689px) and (max-width: 991px) {
     .package-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner-container {
+        height: 100vh;
+        justify-content: center;
+        width: 100%;
+        background-position: 40% 50%;
+    }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1366px) {
+    .banner-container {
+        height: 100vh;
+        width: 100%;
+        background-position: 40% 50%;
     }
 }
