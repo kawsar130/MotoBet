@@ -25,5 +25,5 @@ Server-side: https://github.com/kawsar130/MotoBet-server
 • Material UI  
 • React Router  
 • MongoDB  
-• ExpressJs <br />
+• Node Js <br />
 • ExpressJs  
