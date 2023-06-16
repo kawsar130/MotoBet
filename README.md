@@ -1,14 +1,17 @@
-# MotoBet - Book your Motorcycle Online
+# MotoBet - Book your Motorcycle Online 
 
-MotoBet is one of the largest Motorcycle Retail seller. We are passionate to Revamp your bucket list and give wings to your dreamy wish. When most shoppers think of buying a motorcycle online they think of places like Ebay or Craigslist as places to shop online for a motorcycle. These sites along with others all will allow you to buy a motorcycle online. But wait, There are other places to buy a motorcycle online. We happen to be one of those places where you can buy a motorcycle online at a cheap price.  
-
-Website Features:  
-· Motorcycle retail seller and maintenance provider website.  
-· Includes Order & Product management, Product adding, Customer feedback, and other essential things.  
-· Admin panel is implemented with Firebase Admin & JSON Web Token.  
-· Fully responsive interface.  
+Website Features:
+· Product Management, Order management, user management, customer feedback/review.
+· Manage orders based on the role, Users can make orders, edit orders, and cancel orders.
+· Users can give feedback/review the services.
+· Multiple Signing/Signup options available. Users can log in/signup with Email, Password, as well as with Google.
+· Admin can see all the user's orders, update the status, and manage all the orders.
+· Admin can add another admin.
+· User Dashboard and Admin panel is implemented with Firebase Admin & JSON Web Token.
+· MongoDB is used for the database.
+· Fully responsive interface both for mobile and PC.  
   
-For Admin Access, login with:  
+For Admin Access, log in with:  
 Email: john@admin.com  
 Password: 123456  
   
@@ -18,8 +21,9 @@ Server-side: https://github.com/kawsar130/MotoBet-server
 ## This website is made with the following technologies  
 • React  
 • Vanilla CSS  
-• Firebase Auth & Admin.  
+• Firebase Auth & Admin SDK.  
 • Material UI  
 • React Router  
 • MongoDB  
+• ExpressJs <br />
 • ExpressJs  
